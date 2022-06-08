@@ -155,8 +155,8 @@ public class Building implements
       parseDoubleOrNull(element.buildingminLevel())
     );
 
-    int renderHeight = (int) Math.ceil(height != null ? height : levels != null ? (levels * 4) : 5);
-    int renderMinHeight = (int) Math.floor(minHeight != null ? minHeight : minLevels != null ? (minLevels * 4) : 0);
+    int renderHeight = (int) Math.ceil(height != null ? height : levels != null ? (levels * 3.66) : 5);
+    int renderMinHeight = (int) Math.floor(minHeight != null ? minHeight : minLevels != null ? (minLevels * 3.66) : 0);
 
     if (renderHeight < 3660 && renderMinHeight < 3660) {
       var feature = features.polygon(LAYER_NAME).setBufferPixels(BUFFER_SIZE)

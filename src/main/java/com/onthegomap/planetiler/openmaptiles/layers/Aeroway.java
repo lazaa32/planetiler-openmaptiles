@@ -68,7 +68,7 @@ public class Aeroway implements
   @Override
   public void process(Tables.OsmAerowayLinestring element, FeatureCollector features) {
     features.line(LAYER_NAME)
-      .setMinZoom(11)
+      .setMinZoom(10)
       .setAttr(Fields.CLASS, element.aeroway())
       .setAttr(Fields.REF, element.ref());
   }
