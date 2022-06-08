@@ -182,17 +182,16 @@ jobs:
         run: ./mvnw -DskipTests -Dimage.version=CI_ONLY --batch-mode -no-transfer-progress package jib:dockerBuild --file pom.xml
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v3
-        working-directory: planetiler
         with:
           name: planetiler-build
-          path: planetiler-dist/target/*with-deps.jar
-      - name: Download data (java)
+          path: planetiler/planetiler-dist/target/*with-deps.jar
+      - name: 'Download data (java)'
         working-directory: planetiler
         run: java -jar planetiler-dist/target/*with-deps.jar --only-download --area=monaco
-      - name: Download wikidata (java)
+      - name: 'Download wikidata (java)'
         working-directory: planetiler
         run: java -jar planetiler-dist/target/*with-deps.jar --only-fetch-wikidata --area=monaco
-      - name: Verify build
+      - name: 'Verify build'
         working-directory: planetiler
         run: ./scripts/test-release.sh CI_ONLY
         env:
