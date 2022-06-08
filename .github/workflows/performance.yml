@@ -5,7 +5,7 @@ name: Performance
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ GH-actions ]
 
 env:
   # For performance tests, run this branch against main with:
